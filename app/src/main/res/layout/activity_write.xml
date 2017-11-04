@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context="com.example.baehyeonbin.highthon.WriteActivity">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        android:textSize="25dp"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:background="@android:color/white"
+        android:hint="제목"/>
+
+    <EditText
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/button2"
+        android:layout_alignStart="@+id/title"
+        android:layout_below="@+id/title"
+        android:background="@android:color/white"
+        android:gravity="top"
+        android:hint="내용"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:lines="50"
+        android:padding="10dp"
+        android:textSize="20dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="폭격 요청하기"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/button2" />
+</RelativeLayout>
