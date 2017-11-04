@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.baehyeonbin.highthon.beans.Result;
+import com.example.baehyeonbin.highthon.beans.Token;
 import com.example.baehyeonbin.highthon.beans.User;
 import com.example.baehyeonbin.highthon.beans.UserGet;
 import com.example.baehyeonbin.highthon.services.UserService;
@@ -69,10 +70,12 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<UserGet> call, Response<UserGet> response) {
                 Result status = response.body().getStatus();
                 if(status.getSuccess()) {
-                    response.body().getToken().save();
-                    response.body().getUser().save();
+                    User userResponse = response.body().getUser();
+                    userResponse.save();
+                    Token tokenResponse = response.body().getToken();
+                    tokenResponse.save();
                     ToastUtill.makeToast(getApplicationContext(), "로그인 성공", Toast.LENGTH_SHORT);
-                    Log.d("test","test");
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 } else {
                     SnackbarUtill.makeSnackBar(getWindow().getDecorView().getRootView(), status.getMessage(), Snackbar.LENGTH_SHORT);
                 }

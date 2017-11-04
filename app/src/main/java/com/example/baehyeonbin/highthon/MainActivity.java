@@ -21,17 +21,31 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        init();
+        setToolbar();
+        setTabLayout();
+        setViewPager();
+
+    }
+
+    private void init() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        viewPager = (ViewPager) findViewById(R.id.ViewPager);
         tabLayout = (TabLayout) findViewById(R.id.TabLayout);
+    }
+
+    private void setToolbar() {
+    }
+
+    private void setTabLayout() {
         tabLayout.addTab(tabLayout.newTab().setText("폭격요청"));
         tabLayout.addTab(tabLayout.newTab().setText("내 요청"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         //tabLayout이름
+    }
 
-        viewPager = (ViewPager) findViewById(R.id.ViewPager);
-
+    private void setViewPager() {
         // Creating TabPagerAdapter adapter
         TabPagerAdapter pagerAdapter = new TabPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(pagerAdapter);

@@ -17,10 +17,11 @@
         android:theme="@style/AppTheme"
         android:name="com.orm.SugarApp">
         <meta-data android:name="DATABASE" android:value="highthon.db" />
-        <meta-data android:name="VERSION" android:value="1" />
+        <meta-data android:name="VERSION" android:value="2" />
         <meta-data android:name="QUERY_LOG" android:value="true" />
         <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.example.baehyeonbin.highthon" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
             android:name="com.facebook.FacebookActivity"

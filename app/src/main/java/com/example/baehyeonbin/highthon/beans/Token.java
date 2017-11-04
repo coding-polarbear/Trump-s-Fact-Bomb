@@ -1,5 +1,6 @@
 package com.example.baehyeonbin.highthon.beans;
 
+import com.google.gson.annotations.SerializedName;
 import com.orm.SugarRecord;
 
 /**
@@ -7,14 +8,15 @@ import com.orm.SugarRecord;
  */
 
 public class Token extends SugarRecord {
+    @SerializedName("data")
     private String token;
-
+    public Token(){}
     public Token(String token) {
         this.token = token;
     }
 
     public String getToken() {
-        return token;
+        return this.token;
     }
 
     public void setToken(String token) {

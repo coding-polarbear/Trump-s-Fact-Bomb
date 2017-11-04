@@ -21,25 +21,25 @@
                 android:layout_margin="10dp"
                 android:id="@+id/layout">
 
-                <ImageView
-                    android:id="@+id/image"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/ellipse" />
                 <TextView
-                    android:layout_toRightOf="@+id/image"
+                    android:layout_toRightOf="@+id/profile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Title"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                     android:layout_marginLeft="10dp"
-                    android:id="@+id/title"
+                    android:id="@+id/username"
                     android:textSize="14dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/image"
-                    android:layout_below="@+id/title"
+                    android:layout_toRightOf="@+id/profile"
+                    android:layout_below="@+id/username"
                     android:layout_marginLeft="10dp"
                     android:text="2017-11-05"
                     android:id="@+id/date"/>
@@ -47,19 +47,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_below="@id/image"
+                    android:layout_below="@id/profile"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                     android:textSize="24dp"
                     android:text="팩트로 좀 때려주세요"
-                    android:id="@+id/message"/>
+                    android:id="@+id/titleText"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_below="@+id/message"
+                    android:layout_below="@+id/titleText"
                     android:textSize="14dp"
                     android:text="재산권의 행사는 공공복리에 적합하도록 하여야 한다. 대통령은 국회에 출석하여 발언하거나 서한으로 의견…."
-                    android:id="@+id/maintext" />
+                    android:id="@+id/content" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -67,6 +67,7 @@
                 android:layout_height="50dp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
+                android:id="@+id/subView"
                android:background="@drawable/background_attacking"
                 android:layout_alignParentStart="true">
                 
@@ -97,6 +98,7 @@
                  android:layout_marginRight="20dp"
                  android:layout_alignParentRight="true"
                  android:text="폭격중"
+                 android:id="@+id/status"
                  android:textColor="@android:color/white"
                  android:textSize="20dp"
                  />

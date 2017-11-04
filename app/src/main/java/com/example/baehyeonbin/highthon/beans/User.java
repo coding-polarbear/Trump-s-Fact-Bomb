@@ -9,7 +9,7 @@ import com.orm.SugarRecord;
 public class User extends SugarRecord {
     private String username;
     private String password;
-
+    public User() {}
     public User(String username, String password) {
         this.username = username;
         this.password = password;
