@@ -35,10 +35,12 @@ public class My_Request_Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(),WriteActivity.class);
-                startActivityForResult(intent,5555);
+                startActivity(intent);
             }
         });
+
+
+
         return view;
     }
-
 }
