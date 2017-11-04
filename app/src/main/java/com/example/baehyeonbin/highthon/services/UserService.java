@@ -1,6 +1,7 @@
 package com.example.baehyeonbin.highthon.services;
 
 import com.example.baehyeonbin.highthon.beans.Result;
+import com.example.baehyeonbin.highthon.beans.Success;
 import com.example.baehyeonbin.highthon.beans.User;
 import com.example.baehyeonbin.highthon.beans.UserGet;
 
@@ -20,7 +21,7 @@ public interface UserService {
     @Multipart
     Call<UserGet> login(@Part("data") User user);
 
-    @POST("/user")
+    @POST("/users")
     @Multipart
-    Call<Result> register(@Part("data") User user, @Part("profile") MultipartBody.Part profile);
+    Call<Success> register(@Part("data") User user, @Part MultipartBody.Part profile);
 }
