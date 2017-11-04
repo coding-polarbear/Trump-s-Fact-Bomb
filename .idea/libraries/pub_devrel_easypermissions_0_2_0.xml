@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="pub.devrel:easypermissions-0.2.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/easypermissions-0.2.0.aar/4fe2f37976299cb37eb121f127cc6fe1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/easypermissions-0.2.0.aar/4fe2f37976299cb37eb121f127cc6fe1/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/pub.devrel/easypermissions/0.2.0/9dc34ae815afc529ebbfe9bcebde923c918cd6c6/easypermissions-0.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
