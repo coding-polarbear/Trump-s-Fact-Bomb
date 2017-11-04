@@ -20,6 +20,7 @@ import retrofit2.http.Query;
 
 public interface PostService {
     @POST("/posts")
+    @Multipart
     Call<Success> write(@Part("data") Post post);
 
     @GET("/posts")
