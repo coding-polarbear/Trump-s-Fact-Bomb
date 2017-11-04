@@ -22,12 +22,12 @@
             android:tint="@android:color/white"
             />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/RcyclerView"
+        <ListView
+            android:id="@+id/listView"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        </android.support.v7.widget.RecyclerView>
+        </ListView>
     </FrameLayout>
 
 </LinearLayout>
