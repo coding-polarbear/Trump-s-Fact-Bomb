@@ -2,6 +2,12 @@
 <resources>
     <color name="colorPrimary">#EF5350</color>
     <color name="colorPrimaryDark">#E53935</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#7E7EFF</color>
+    <color name="attacking"> #00B0FF</color>
+    <color name="attackingDark">#0091EA</color>
+    <color name="attackingstop">#FF6E40</color>
+    <color name="attackingstopDark">#E64A19</color>
+    <color name="background">#F0F0F0</color>
     <color name="FloatingColor">#7e7eff</color>
+
 </resources>
