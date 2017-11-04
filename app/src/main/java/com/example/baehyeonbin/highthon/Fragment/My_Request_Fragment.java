@@ -35,23 +35,12 @@ public class My_Request_Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(),WriteActivity.class);
-                startActivityForResult(intent,5555);
+                startActivity(intent);
             }
         });
 
 
 
         return view;
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if((resultCode == RESULT_OK){
-            if(requestCode== 5555){
-
-            }
-        }
     }
 }
