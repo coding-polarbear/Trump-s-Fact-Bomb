@@ -1,7 +1,9 @@
 package com.example.baehyeonbin.highthon.utills;
 
+import android.content.res.Resources;
 import android.support.annotation.NonNull;
 
+import com.example.baehyeonbin.highthon.R;
 import com.example.baehyeonbin.highthon.beans.Token;
 
 import java.io.File;
@@ -20,7 +22,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitUtil {
     public static Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://n0rr.iptime.org:7001")
+            .baseUrl(Resources.getSystem().getString(R.string.server_url))
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
@@ -32,7 +34,7 @@ public class RetrofitUtil {
             Request original = chain.request();
                Token token = Token.last(Token.class);
             Request request = original.newBuilder()
-                       .header("authorization",token.getAccessToken())
+                       .header("authorization",token.getToken())
                     .method(original.method(), original.body())
                     .build();
             return chain.proceed(request);
@@ -40,7 +42,7 @@ public class RetrofitUtil {
 
         OkHttpClient client = httpClient.build();
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://n0rr.iptime.org:7001")
+                .baseUrl(Resources.getSystem().getString(R.string.server_url))
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();

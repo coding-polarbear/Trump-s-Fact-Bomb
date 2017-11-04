@@ -7,17 +7,17 @@ import com.orm.SugarRecord;
  */
 
 public class Token extends SugarRecord {
-    private String accessToken;
+    private String token;
 
-    public Token(String accessToken) {
-        this.accessToken = accessToken;
+    public Token(String token) {
+        this.token = token;
     }
 
-    public String getAccessToken() {
-        return accessToken;
+    public String getToken() {
+        return token;
     }
 
-    public void setAccessToken(String accessToken) {
-        this.accessToken = accessToken;
+    public void setToken(String token) {
+        this.token = token;
     }
 }
