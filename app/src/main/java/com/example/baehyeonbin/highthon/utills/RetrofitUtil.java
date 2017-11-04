@@ -22,7 +22,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitUtil {
     public static Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl(Resources.getSystem().getString(R.string.server_url))
+            .baseUrl("http://n0rr.iptime.org:3333")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
@@ -42,7 +42,7 @@ public class RetrofitUtil {
 
         OkHttpClient client = httpClient.build();
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Resources.getSystem().getString(R.string.server_url))
+                .baseUrl("http://n0rr.iptime.org:3333")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();
