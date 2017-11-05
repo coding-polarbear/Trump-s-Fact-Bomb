@@ -1,7 +1,10 @@
 package com.example.baehyeonbin.highthon.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.baehyeonbin.highthon.AttackdetailActivity;
 import com.example.baehyeonbin.highthon.R;
 import com.example.baehyeonbin.highthon.beans.Post;
 
@@ -45,6 +49,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         if(post.isOpen()) {
             holder.subView.setBackground(context.getDrawable(R.drawable.background_attacking));
             holder.status.setText("폭격 진행중");
+            holder.cardView.setOnClickListener(v -> {
+                Intent intent = new Intent(context, AttackdetailActivity.class);
+                Log.d("idx : " , Integer.toString(post.getIdx()));
+                intent.putExtra("postIdx", post.getIdx());
+                context.startActivity(intent);
+            });
         } else {
             holder.subView.setBackground(context.getDrawable(R.drawable.background_attackingstop));
             holder.status.setText("폭격 중지");
@@ -62,6 +72,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         public TextView date;
         public TextView content;
         public TextView count;
+        public CardView cardView;
         public TextView status;
         public TextView username;
         public RelativeLayout subView;
@@ -73,6 +84,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             content = itemView.findViewById(R.id.content);
             count = itemView.findViewById(R.id.count);
             status = itemView.findViewById(R.id.status);
+            cardView = itemView.findViewById(R.id.cardview);
             subView = itemView.findViewById(R.id.subView);
             username = itemView.findViewById(R.id.username);
         }

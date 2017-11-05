@@ -21,9 +21,9 @@
         card_view:cardCornerRadius="10dp">
 
         <RelativeLayout
+            android:id="@+id/fulllayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/fulllayout">
+            android:layout_height="match_parent">
 
             <RelativeLayout
                 android:id="@+id/layout"
@@ -32,7 +32,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="10dp">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/image"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
@@ -49,14 +49,14 @@
                     android:textSize="12dp" />
 
                 <TextView
+                    android:id="@+id/date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/title"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@+id/image"
                     android:text="2017/11/05 4:53"
-                    android:textSize="12dp"
-                    android:id="@+id/date"/>
+                    android:textSize="12dp" />
 
                 <TextView
                     android:id="@+id/fact"
@@ -90,14 +90,14 @@
                 android:textSize="20dp" />
 
             <ImageView
+                android:id="@+id/image2"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_alignTop="@+id/count"
                 android:layout_marginEnd="14dp"
                 android:layout_marginRight="14dp"
                 android:layout_toLeftOf="@+id/count"
-                android:src="@drawable/blackrocket"
-                android:id="@+id/image2"/>
+                android:src="@drawable/blackrocket" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
@@ -106,7 +106,6 @@
         android:layout_height="0dp"
         android:layout_gravity="bottom"
         android:layout_weight="5"
-
         >
 
         <ListView
@@ -135,6 +134,7 @@
                 android:hint=" 팩트로 폭격해 주세요"
                 android:textColorHint="#FFFFFF"
                 android:paddingLeft="10dp"
+                android:id="@+id/editComment"
                 android:textSize="20sp"
                 android:gravity="left|center"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
@@ -144,6 +144,8 @@
                 android:src="@drawable/roket"
                 android:layout_margin="6dp"
                 android:layout_width="0dp"
+                android:id="@+id/commentBtn"
+                android:onClick="addComment"
                 android:layout_height="match_parent"
                 android:layout_weight="2"/>
         </LinearLayout>

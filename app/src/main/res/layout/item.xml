@@ -12,7 +12,7 @@
         android:layout_height="88dp"
         android:id="@+id/listview">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="10dp"

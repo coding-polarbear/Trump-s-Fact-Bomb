@@ -8,12 +8,14 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.baehyeonbin.highthon.R;
 import com.example.baehyeonbin.highthon.beans.Comment;
 
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by pc on 2017-11-05.
@@ -22,7 +24,13 @@ import java.util.ArrayList;
 public class List_Adapter extends BaseAdapter{
 
     private LayoutInflater inflater;
-    private ArrayList<Comment> items = new ArrayList<Comment>();
+    private List<Comment> items = new ArrayList<Comment>();
+    private Context context;
+
+    public List_Adapter(Context context, List<Comment> commentList) {
+        this.context = context;
+        this.items = commentList;
+    }
     @Override
     public int getCount() {
         return items.size();
@@ -45,8 +53,11 @@ public class List_Adapter extends BaseAdapter{
             inflater =(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.item,viewGroup,false);
         }
+
         Comment comment = items.get(i);
-        //ImageView imageView = view.findViewById(R.id.commantimage);
+
+        ImageView imageView = view.findViewById(R.id.commantimage);
+        Glide.with(context).load("http://n0rr.iptime.org:3333/" + comment.getUsername() + "/profile.jpg").into(imageView);
 
         TextView people = view.findViewById(R.id.people);
         people.setText(comment.getUsername());
