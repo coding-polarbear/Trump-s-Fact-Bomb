@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private void init() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setTitle(getString(R.string.app_name));
         viewPager = (ViewPager) findViewById(R.id.ViewPager);
         tabLayout = (TabLayout) findViewById(R.id.TabLayout);
     }
