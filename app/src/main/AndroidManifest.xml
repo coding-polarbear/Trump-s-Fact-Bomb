@@ -23,7 +23,7 @@
             android:value="highthon.db" />
         <meta-data
             android:name="VERSION"
-            android:value="2" />
+            android:value="3" />
         <meta-data
             android:name="QUERY_LOG"
             android:value="true" />
@@ -62,7 +62,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AttackdetailActivity" />
+        <activity android:name=".AttackdetailActivity">
+
+        </activity>
     </application>
 
 </manifest>
