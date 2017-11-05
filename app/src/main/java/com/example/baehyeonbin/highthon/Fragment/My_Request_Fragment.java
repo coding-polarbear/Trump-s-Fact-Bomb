@@ -55,6 +55,9 @@ public class My_Request_Fragment extends Fragment {
         init();
         loadData();
         return view;
+
+
+
     }
 
     private void init() {
@@ -103,5 +106,14 @@ public class My_Request_Fragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         RecyclerAdapter recyclerAdapter = new RecyclerAdapter(getActivity(),postList);
         recyclerView.setAdapter(recyclerAdapter);
+
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {              //스크롤 시 플로팅버튼 숨기기
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                if (dy > 0) {
+                    fab.hide();
+                } else if (dy < 0) fab.show();
+            }
+        });
     }
 }

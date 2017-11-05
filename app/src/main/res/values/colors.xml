@@ -9,5 +9,6 @@
     <color name="attackingstopDark">#E64A19</color>
     <color name="background">#F0F0F0</color>
     <color name="FloatingColor">#7e7eff</color>
-
+    <color name="attackPrimary">#00B0FF</color>
+    <color name="attackPrimaryDark">#0091EA</color>
 </resources>
