@@ -15,6 +15,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.baehyeonbin.highthon.AttackdetailActivity;
 import com.example.baehyeonbin.highthon.Attackstop;
+import com.example.baehyeonbin.highthon.MyAttackResumeActivity;
+import com.example.baehyeonbin.highthon.MyAttackStopActivity;
 import com.example.baehyeonbin.highthon.R;
 import com.example.baehyeonbin.highthon.beans.Post;
 
@@ -24,22 +26,22 @@ import java.util.List;
  * Created by baehyeonbin on 2017. 11. 5..
  */
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
+public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ViewHolder>{
     private List<Post> postList;
     private Context context;
-    public RecyclerAdapter(Context context, List<Post> postList)  {
+    public MyRecyclerAdapter(Context context, List<Post> postList)  {
         this.context = context;
         this.postList = postList;
     }
     private View view;
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MyRecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         view = LayoutInflater.from(context.getApplicationContext()).inflate(R.layout.item_cardviewing, null);
-        return new ViewHolder(view);
+        return new MyRecyclerAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(MyRecyclerAdapter.ViewHolder holder, int position) {
         Post post = postList.get(position);
         Glide.with(context).load("http://n0rr.iptime.org:3333/" + postList.get(position).getUsername() + "/profile.jpg").into(holder.profile);
         holder.titleText.setText(post.getTitle());
@@ -51,7 +53,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             holder.subView.setBackground(context.getDrawable(R.drawable.background_attacking));
             holder.status.setText("폭격 진행중");
             holder.cardView.setOnClickListener(v -> {
-                Intent intent = new Intent(context, AttackdetailActivity.class);
+                Intent intent = new Intent(context,MyAttackStopActivity.class);
                 Log.d("idx : " , Integer.toString(post.getIdx()));
                 intent.putExtra("postIdx", post.getIdx());
                 context.startActivity(intent);
@@ -60,7 +62,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             holder.subView.setBackground(context.getDrawable(R.drawable.background_attackingstop));
             holder.status.setText("폭격 중지");
             holder.cardView.setOnClickListener(v -> {
-                Intent intent = new Intent(context, Attackstop.class);
+                Intent intent = new Intent(context, MyAttackResumeActivity.class);
                 Log.d("idx : " , Integer.toString(post.getIdx()));
                 intent.putExtra("postIdx", post.getIdx());
                 context.startActivity(intent);

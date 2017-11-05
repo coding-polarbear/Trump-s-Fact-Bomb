@@ -123,7 +123,7 @@
             android:layout_height="wrap_content"
             android:background="#00affe"
             android:paddingLeft="10dp"
-            android:paddingBottom="3git dp"
+            android:paddingBottom="3dp"
             app:layout_scrollFlags="scroll|enterAlways"
             android:orientation="horizontal"
             android:weightSum="10"

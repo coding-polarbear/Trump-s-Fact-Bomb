@@ -37,10 +37,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * Created by pc on 2017-11-05.
+ * Created by baehyeonbin on 2017. 11. 5..
  */
 
-public class Attackstop extends AppCompatActivity{
+public class MyAttackStopActivity extends AppCompatActivity{
     ListView listview;
     LinearLayout attacklayout;
     private CircleImageView image;
@@ -63,18 +63,19 @@ public class Attackstop extends AppCompatActivity{
     private Post post;
     private List_Adapter list_adapter;
     private Call<Success> call4;
+
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_attackstop);
+        setContentView(R.layout.activity_my_attack_stop);
         init();
         loadFactData();
     }
 
     private void init() {
         listview = (ListView) findViewById(R.id.attack_item);
-        attacklayout = (LinearLayout) findViewById(R.id.attack_layout);
+        attacklayout = (LinearLayout) findViewById(R.id.attackstop_layout);
         image = (CircleImageView) findViewById(R.id.image);
         title = findViewById(R.id.title);
         date = findViewById(R.id.date);
@@ -84,6 +85,9 @@ public class Attackstop extends AppCompatActivity{
         editComment = findViewById(R.id.editComment);
         commentBtn = findViewById(R.id.commentBtn);
         postIdx = getIntent().getExtras().getInt("postIdx");
+        attacklayout.setOnClickListener(v -> {
+            resume();
+        });
     }
 
     private void loadFactData() {
@@ -139,6 +143,24 @@ public class Attackstop extends AppCompatActivity{
         ((BaseAdapter) listview.getAdapter()).notifyDataSetChanged();
 
     }
+    private void resume() {
+        postService = RetrofitUtil.getLoginRetrofit().create(PostService.class);
+        call4  = postService.changeIsOpenValue(postIdx, false);
+        call4.enqueue(new Callback<Success>() {
+            @Override
+            public void onResponse(Call<Success> call, Response<Success> response) {
+                Result status = response.body().getStatus();
+                if(status.getSuccess()) {
+                    ToastUtill.makeToast(getApplicationContext(), status.getMessage(), Toast.LENGTH_SHORT);
+                    finish();
+                } else
+                    SnackbarUtill.makeSnackBar(getWindow().getDecorView().getRootView(), status.getMessage(), Snackbar.LENGTH_SHORT);
+            }
 
-
+            @Override
+            public void onFailure(Call<Success> call, Throwable t) {
+                SnackbarUtill.makeSnackBar(getWindow().getDecorView().getRootView(), "알 수 없는 오류가 발생하였습니다.", Snackbar.LENGTH_SHORT);
+            }
+        });
+    }
 }

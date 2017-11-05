@@ -63,8 +63,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".AttackdetailActivity">
-
         </activity>
+        <activity android:name=".Attackstop"/>
+        <activity android:name=".MyAttackResumeActivity"/>
+        <activity android:name=".MyAttackStopActivity"/>
     </application>
 
 </manifest>
