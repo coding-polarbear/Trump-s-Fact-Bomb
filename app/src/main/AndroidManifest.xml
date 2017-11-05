@@ -50,7 +50,8 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".WriteActivity" />
+        <activity android:name=".WriteActivity"
+            android:label="@string/request"/>
         <activity android:name=".SignUpActivity" />
         <activity android:name=".LoginActivity">
         </activity>
@@ -64,8 +65,17 @@
         </activity>
         <activity android:name=".AttackdetailActivity"
                   android:windowSoftInputMode="adjustPan"
+                  android:label="@string/play"
             android:theme="@style/attackTheme">
         </activity>
+
+        <activity android:name=".Attackstop"
+            android:label="폭격중단됨"/>
+        <activity android:name=".MyAttackResumeActivity"
+                  android:label="@string/replay"
+            />
+        <activity android:name=".MyAttackStopActivity"
+            android:label="@string/stop"/>
     </application>
 
 </manifest>

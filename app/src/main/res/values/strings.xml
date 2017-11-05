@@ -3,8 +3,8 @@
     <string name="facebook_app_id">1512677635476693</string>
     <string name="fb_login_protocol_scheme">fb1512677635476693</string>
     <string name="server_url">http://n0rr.iptime.org:3333</string>
-    <!--<string name="request">폭격요청</string>-->
-    <!--<string name="play">폭격하기</string>-->
-    <!--<stirng name="stop">폭격중단</stirng>-->
-    <!--<string name="replay">폭격재개</string>-->
+    <string name="request">폭격요청</string>
+    <string name="play">폭격하기</string>
+    <string name="stop">폭격중단</string>
+    <string name="replay">폭격재개</string>
 </resources>
