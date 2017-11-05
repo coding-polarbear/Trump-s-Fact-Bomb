@@ -11,4 +11,5 @@
     <color name="FloatingColor">#7e7eff</color>
     <color name="attackPrimary">#00B0FF</color>
     <color name="attackPrimaryDark">#0091EA</color>
+    <color name="tabchangecolor">#FF4081</color>
 </resources>

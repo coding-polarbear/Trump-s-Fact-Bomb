@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                                                 xmlns:tools="http://schemas.android.com/tools"
-                                                 android:layout_width="match_parent"
-                                                 android:layout_height="match_parent"
-                                                 xmlns:app="http://schemas.android.com/apk/res-auto">
-<LinearLayout
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -123,28 +124,28 @@
             android:layout_height="wrap_content"
             android:background="#00affe"
             android:paddingLeft="10dp"
-            android:paddingBottom="3dp"
+            android:focusableInTouchMode="true"
             app:layout_scrollFlags="scroll|enterAlways"
             android:orientation="horizontal"
             android:weightSum="10"
             >
 
             <EditText
+                android:id="@+id/editComment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="7dp"
                 android:layout_marginTop="7dp"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
                 android:layout_weight="8"
+                android:background="@drawable/content_shape"
+                android:gravity="left|center"
                 android:hint=" 팩트로 폭격해 주세요"
-                android:textColorHint="#FFFFFF"
+                android:paddingBottom="15dp"
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
-                android:paddingBottom="15dp"
-                android:id="@+id/editComment"
-                android:textSize="20sp"
-                android:gravity="left|center"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                android:background="@drawable/content_shape"
+                android:textColorHint="#FFFFFF"
+                android:textSize="20sp"
                 />
             <ImageView
                 android:src="@drawable/roket"

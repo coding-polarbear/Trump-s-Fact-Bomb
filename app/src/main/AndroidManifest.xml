@@ -62,11 +62,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AttackdetailActivity">
+        <activity android:name=".AttackdetailActivity"
+                  android:windowSoftInputMode="adjustPan"
+            android:theme="@style/attackTheme">
         </activity>
-        <activity android:name=".Attackstop"/>
-        <activity android:name=".MyAttackResumeActivity"/>
-        <activity android:name=".MyAttackStopActivity"/>
     </application>
 
 </manifest>

@@ -23,10 +23,11 @@
         android:background="?attr/colorPrimary"
         app:popupTheme="@style/AppTheme.PopupOverlay"
         app:title="HighThon"
-        app:titleTextColor="#FFFFFf"/>
+        app:titleTextColor="#FFFFFF"/>
 
     <android.support.design.widget.TabLayout
         android:id="@+id/TabLayout"
+        app:tabIndicatorColor="@color/tabchangecolor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#EF5350"
